@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button.</p>
+
+<button onclick="myFunction()">Guess number</button>
+<script>
+function myFunction() {
+  const rNumber = Math.floor(Math.random() * 10) +1;
+  var number = prompt("Please enter your number (from 1 to 10)");
+  if (number == rNumber) {
+    alert("Good Work");
+  } else alert("Not matched");
+}
+</script>
+
+</body>
+</html>
