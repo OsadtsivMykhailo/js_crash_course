@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>JS_Basic_10</title>
+</head>
+<body>
+
+	<input id="num1" />
+
+	<div id="operator_btns">
+	  <input type="radio" id="contactChoice1"
+	  name="contact" value="email" onclick="op='*'">x</input>
+	  <input type="radio" id="contactChoice2"
+	  name="contact" value="phone" onclick="op='/'">:</input>
+	</div>
+
+
+	<input id="num2" />
+	<br>
+
+	<button onclick="func()">Calculate</button>
+
+	<p id="result"></p>
+
+	<script>
+	  var op; 
+	  function func() {
+	    var result;
+	    var num1 = Number(document.getElementById("num1").value);
+	    var num2 = Number(document.getElementById("num2").value);
+	    switch (op) {
+	      case '*':
+	        result = num1 * num2;
+	        break;
+	      case '/':
+	        result = num1 / num2;
+	        break;
+	    }
+	    document.getElementById("result").innerHTML = result;
+	  }
+	</script>
+
+</body>
+</html>
