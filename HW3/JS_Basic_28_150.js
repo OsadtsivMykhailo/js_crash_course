@@ -3,7 +3,7 @@
 // Return true if either of them are in the said range.
 function check28 (int1, int2) {
     if (Number.isInteger(int1) && Number.isInteger(int2)) {
-        if ((int1 >= 50 && int1 <= 99) || (int2 >= 50 && int1 <= 99)) {
+        if ((int1 >= 50 && int1 <= 99) || (int2 >= 50 && int2 <= 99)) {
             return true;
         } else {
             return false;
