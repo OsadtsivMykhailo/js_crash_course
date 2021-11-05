@@ -57,17 +57,22 @@ let op = 0;
 
 function func() {
     let MainCharackter = "";
+    let image = "";
     switch (op) {
       case 1:
         MainCharackter = Naruto;
+        image = "naruto.jpg";
         break;
       case 2:
         MainCharackter = Sasuke;
+        image = "sasuke.png";
         break;
       case 3:
         MainCharackter = Sakura;
+        image = "sakura.png";
         break;
     }
     document.getElementById("result").innerHTML = "You will be playing as " 
     + MainCharackter.name;
+    document.getElementById("firstImage").src = image;
   }
