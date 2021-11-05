@@ -50,5 +50,24 @@ const badNinjas = [10];
 for (let i = 1; i <11; i++) {
     badNinjas[i] = new Ninja (`抜け忍 ${i}`, getRandomIntInclusive (1, 2),
      getRandomIntInclusive (1, 2), getRandomIntInclusive (1, 2));
-    console.log(badNinjas);
+    //console.log(badNinjas);
 }
+
+let op = 0;
+
+function func() {
+    let MainCharackter = "";
+    switch (op) {
+      case 1:
+        MainCharackter = Naruto;
+        break;
+      case 2:
+        MainCharackter = Sasuke;
+        break;
+      case 3:
+        MainCharackter = Sakura;
+        break;
+    }
+    document.getElementById("result").innerHTML = "You will be playing as " 
+    + MainCharackter.name;
+  }
