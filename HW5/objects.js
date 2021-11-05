@@ -24,3 +24,18 @@ const lvlUpExpArray = [20, 100, 500, 2500, 12500, 60000, 300000,
 
 const Sasuke = new UchihaNinja ("Sasuke", 3, 5, 4);
 //console.log(Sasuke);
+
+const Sakura = new Ninja ("Sakura", 2, 1, 1);
+//console.log(Sakura);
+
+class UzumakiNinja extends Ninja {
+    constructor(name, tai, nin, gen){
+    super(name, tai, nin, gen);
+    this.chakra *= 1.25;
+    this.surname = "Uzumaki";
+    this.kekkegenkai = "DenseChakra";
+    }
+}
+
+const Naruto = new UzumakiNinja ("Naruto", 3, 4, 3);
+//console.log(Naruto);
