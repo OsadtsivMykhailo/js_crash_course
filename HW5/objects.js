@@ -5,14 +5,15 @@ class Ninja {
         this.nin = nin;
         this.gen = gen;
         this.lvl = 0;
-        this.hp = 100 + tai * (lvl + 1) + nin * 0.5 * (lvl + 1);
-        this.chakra = 100 + tai * (lvl + 1) + nin * 3 * (lvl + 1) + gen * (lvl + 1);
+        this.hp = 100 + tai * (this.lvl + 1) + nin * 0.5 * (this.lvl + 1);
+        this.chakra = 100 + tai * (this.lvl + 1) + nin * 3 * (this.lvl + 1) + gen * (this.lvl + 1);
         this.freeParamPoints = 0;
     }
 }
 
 class UchihaNinja extends Ninja {
-    constructor(){
+    constructor(name, tai, nin, gen){
+    super(name, tai, nin, gen);
     this.surname = "Uchiha";
     this.kekkegenkai = "sharingan";
     }
@@ -21,4 +22,5 @@ class UchihaNinja extends Ninja {
 const lvlUpExpArray = [20, 100, 500, 2500, 12500, 60000, 300000,
                      1200000, 12000000, 10 ** 8, 10 ** 9];
 
-const Sasuke = new UchihaNinja ("Sasuke", )
+const Sasuke = new UchihaNinja ("Sasuke", 3, 5, 4);
+//console.log(Sasuke);
