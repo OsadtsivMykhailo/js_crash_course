@@ -39,3 +39,16 @@ class UzumakiNinja extends Ninja {
 
 const Naruto = new UzumakiNinja ("Naruto", 3, 4, 3);
 //console.log(Naruto);
+
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+}
+
+const badNinjas = [10];
+for (let i = 1; i <11; i++) {
+    badNinjas[i] = new Ninja (`抜け忍 ${i}`, getRandomIntInclusive (1, 2),
+     getRandomIntInclusive (1, 2), getRandomIntInclusive (1, 2));
+    console.log(badNinjas);
+}
