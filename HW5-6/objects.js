@@ -54,21 +54,21 @@ for (let i = 1; i <11; i++) {
 }
 
 let op = 0;
+let MainCharackter = {};
 let snd = new Audio("Sweet16.mp3");
 function func() {
-    let MainCharackter = "";
     let image = "";
     switch (op) {
       case 1:
-        MainCharackter = Naruto;
+        Object.assign(MainCharackter, Naruto);
         image = "naruto.jpg";
         break;
       case 2:
-        MainCharackter = Sasuke;
+        Object.assign(MainCharackter, Sasuke);
         image = "sasuke.png";
         break;
       case 3:
-        MainCharackter = Sakura;
+        Object.assign(MainCharackter, Sakura);
         image = "sakura.png";
         break;
     }
@@ -77,4 +77,8 @@ function func() {
     document.getElementById("firstImage").src = image;
     snd.play();
     document.getElementById("link").hidden = false;
+    const MyJSON = JSON.stringify(MainCharackter);
+    window.localStorage.setItem("mainCh", MyJSON);
+    //console.log(window.localStorage.getItem("mainCh"));
   }
+  
