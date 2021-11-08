@@ -55,7 +55,6 @@ for (let i = 1; i <11; i++) {
 
 let op = 0;
 let snd = new Audio("Sweet16.mp3");
-
 function func() {
     let MainCharackter = "";
     let image = "";
@@ -77,4 +76,5 @@ function func() {
     + MainCharackter.name;
     document.getElementById("firstImage").src = image;
     snd.play();
+    document.getElementById("link").hidden = false;
   }

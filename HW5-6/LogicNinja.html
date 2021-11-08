@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html>
+	<style>
+		aside {
+		  width: 20%;
+		  padding-left: 45px;
+		  margin-left: 45px;
+		  float: right;
+		  font-style: italic;
+		  background-color: lightgray;
+		}
+		</style>
 <head>
 <meta charset=utf-8 />
 <title>Logic Ninja</title>
@@ -19,11 +29,16 @@
 
 <button onclick="func()">Start Game!</button>
 
-
+<aside>
+	<p id="link">
+		<a href="page2.html">TRUE start game</a>
+	</p>
+</aside>
 <p id="result"></p>
 <p><img id = "firstImage" src=""></p>
 
 
 </body>
+<script>document.getElementById("link").hidden = true;</script>
 <script src="objects.js"></script>
 </html>
