@@ -27,4 +27,12 @@ function startingInfo () {
     document.getElementById("chMp").innerHTML = `Chakra: ${mainCharackter.curChakra}/${mainCharackter.chakra}`;
 }
 startingInfo();
+function refreshHpMp () {
+    document.getElementById("chHp").innerHTML = `HP: ${mainCharackter.curHP}/${mainCharackter.hp}`;
+    document.getElementById("chMp").innerHTML = `Chakra: ${mainCharackter.curChakra}/${mainCharackter.chakra}`;
+}
 
+function hit () { //own face;
+    mainCharackter.curHP = 50;
+    refreshHpMp(); 
+}

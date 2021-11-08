@@ -8,7 +8,9 @@ class Ninja {
         this.hp = 100 + tai * (this.lvl + 1) + nin * 0.5 * (this.lvl + 1);
         this.chakra = 100 + tai * (this.lvl + 1) + nin * 3 * (this.lvl + 1) + gen * (this.lvl + 1);
         this.freeParamPoints = 0;
-    }
+        this.curHP;
+        this.curChakra;
+        }
 }
 
 class UchihaNinja extends Ninja {
