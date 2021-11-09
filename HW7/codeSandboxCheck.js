@@ -1,3 +1,4 @@
+//Task 2
 const stringsArray = [
       'one-test', 'cat', 'parrot',
       'banana', 'test-dog', 'dog'
@@ -14,6 +15,7 @@ function filterStringsArray(array) {
 
 console.log(filterStringsArray(stringsArray));
 
+//Task4
 const arrayItems = [
       { a: 1, b: 3 },
       { a: 3, b: 3 },
