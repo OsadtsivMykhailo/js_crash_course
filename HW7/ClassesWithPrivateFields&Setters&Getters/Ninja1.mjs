@@ -16,8 +16,8 @@ export class Ninja1 {
         this.#gen = gen;
         this.#maxHp = 100 + tai + (nin * 0.5);
         this.#maxChakra = 100 + tai + (nin * 3) + gen;
-        this.#curHp = this.maxHp;
-        this.#curChakra = this.maxChakra;
+        this.#curHp = this.#maxHp;
+        this.#curChakra = this.#maxChakra;
         this.#enemy = null;
     }
 
@@ -73,7 +73,7 @@ export class Ninja1 {
     refresh() {
         this.#maxHp = 100 + this.tai + (this.nin * 0.5)
         this.#maxChakra = 100 + this.tai + (this.nin * 3) + this.gen;
-        this.#curHp = this.maxHp;
-        this.#curChakra = this.maxChakra;
+        this.#curHp = this.#maxHp;
+        this.#curChakra = this.#maxChakra;
     }
 }
