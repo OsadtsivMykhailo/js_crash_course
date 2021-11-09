@@ -38,7 +38,9 @@ const arNum = [1, 2, 3, 4, 5, 6];
 const arNum2 = [15, 6, 3, 20, 11];
 function mergeArraysWithoutDuplicates(array1, array2) {
     const res = array1.concat(array2);
-    res.sort();
+    res.sort(function (a, b) {
+        return a - b;
+      });
     for (let i = 0; i < res.length - 1; i++) {
       if (res[i] == res[i + 1]) {
         res.splice(i, 1);
