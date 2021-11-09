@@ -15,6 +15,7 @@ function fight (ninja1, ninja2) {
     ninja1.setEnemy(ninja2);
     ninja2.setEnemy(ninja1);
     ninja1.useTaiAttack();
+    ninja2.useNinAttack();
 }
 
 fight (ninjas[0], ninjas[1]);

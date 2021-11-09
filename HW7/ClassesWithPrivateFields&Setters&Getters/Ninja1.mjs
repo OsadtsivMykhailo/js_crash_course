@@ -36,6 +36,11 @@ export class Ninja1 {
         let damage = 20 + this.#tai - this.#enemy.#tai
         this.#enemy.setcurHp(this.#enemy.#curHp - damage);
     }
+    useNinAttack () {
+        let damage = 30 + this.#tai - this.#enemy.#tai
+        this.setCurChakra(this.#curChakra - 25);
+        this.#enemy.setcurHp(this.#enemy.#curHp - damage);
+    }
     getObj() {
         console.log(this.getName());
         console.log(this.getTai());
