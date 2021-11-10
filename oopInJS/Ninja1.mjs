@@ -118,8 +118,8 @@ export class Ninja1 {
         return this.#isStunned;
     }
     refresh() {
-        this.#maxHp = 100 + this.tai + (this.nin * 0.5)
-        this.#maxChakra = 100 + this.tai + (this.nin * 3) + this.gen;
+        this.#maxHp = 100 + this.#tai + (this.#nin * 0.5)
+        this.#maxChakra = 100 + this.#tai + (this.#nin * 3) + this.#gen;
         this.#curHp = this.getMaxHp();
         this.#curChakra = this.getMaxChakra();
     }
