@@ -1,3 +1,4 @@
+import { getRandomIntInclusive } from "./main.mjs";
 export class Ninja1 {
     #name;
     #tai;
@@ -8,6 +9,7 @@ export class Ninja1 {
     #curHp;
     #curChakra;
     #enemy;
+    #isStunned;
 
     constructor (name, tai, nin, gen) {
         this.#name = name;
@@ -19,6 +21,7 @@ export class Ninja1 {
         this.#curHp = this.#maxHp;
         this.#curChakra = this.#maxChakra;
         this.#enemy = null;
+        this.#isStunned = 0;
     }
 
     increaseTai(x = 1) { this.#tai += x; }
@@ -40,6 +43,42 @@ export class Ninja1 {
         let damage = 30 + this.#tai - this.#enemy.#tai
         this.setCurChakra(this.#curChakra - 25);
         this.#enemy.setcurHp(this.#enemy.#curHp - damage);
+    }
+    reciveStun(x = 1) { this.#isStunned += x; }
+    decreaseStun(x = 1) { this.#isStunned -= x; }
+    useGenAttack () {
+        let damage = 10 + this.#gen - this.#enemy.#gen
+        this.setCurChakra(this.#curChakra - 15);
+        this.#enemy.setcurHp(this.#enemy.#curHp - damage);
+        this.#enemy.reciveStun();
+    }
+    useAttack () {
+        if (this.#curChakra >=25) {
+           let i =  getRandomIntInclusive (1, 3);
+          switch (i) {
+              case 1 :
+                  this.useTaiAttack();
+                  break;
+              case 2 :
+                  this.useNinAttack();
+                  break;
+              case 3 :
+                  this.useGenAttack();
+                  break;
+          } 
+        } else if (this.#curChakra >=15) {
+            let i =  getRandomIntInclusive (1, 2);
+            switch (i) {
+                case 1 :
+                    this.useTaiAttack();
+                    break;
+                case 2 :
+                    this.useGenAttack();
+                    break;
+            }
+        } else {
+            this.useTaiAttack();
+        }
     }
     getObj() {
         console.log(this.getName());
@@ -75,10 +114,13 @@ export class Ninja1 {
     getCurChakra() {
         return this.#curChakra;
     }
+    getIsStunned() {
+        return this.#isStunned;
+    }
     refresh() {
         this.#maxHp = 100 + this.tai + (this.nin * 0.5)
         this.#maxChakra = 100 + this.tai + (this.nin * 3) + this.gen;
-        this.#curHp = this.#maxHp;
-        this.#curChakra = this.#maxChakra;
+        this.#curHp = this.getMaxHp();
+        this.#curChakra = this.getMaxChakra();
     }
 }

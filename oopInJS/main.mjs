@@ -1,5 +1,5 @@
 import { Ninja1 } from "./Ninja1.mjs";
-function getRandomIntInclusive(min, max) {
+export function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
@@ -14,11 +14,34 @@ for (let i = 0; i < 8; i++) {
 function fight (ninja1, ninja2) {
     ninja1.setEnemy(ninja2);
     ninja2.setEnemy(ninja1);
-    ninja1.useTaiAttack();
-    ninja2.useNinAttack();
+    let i = getRandomIntInclusive(0, 1);
+    while (true) {
+      if (i == 0) {
+        i = 1;  
+        if (ninja1.getIsStunned() == 0) {
+            ninja1.useAttack();
+        } else {
+            ninja1.decreaseStun();
+          }
+        if (ninja2.getCurHp() <= 0) return ninja1;
+      } else if (i == 1) {
+            i = 0;  
+            if (ninja2.getIsStunned() == 0) {
+                ninja2.useAttack();
+            } else {
+                ninja2.decreaseStun();
+            }
+            if (ninja1.getCurHp() <= 0) return ninja2;
+        }
+    //   console.log ("start of turn")
+    //   ninja1.getObj();
+    //   console.log ("----------")
+    //   ninja2.getObj();
+    //   console.log ("end of turn")
+    }
 }
 
-fight (ninjas[0], ninjas[1]);
-ninjas[0].getObj();
-console.log("-----------------");
-ninjas[1].getObj();
+let winner = fight (ninjas[0], ninjas[1]);
+winner.getObj();
+ninjas[0].refresh();
+ninjas[1].refresh();
