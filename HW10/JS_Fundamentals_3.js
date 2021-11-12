@@ -3,15 +3,12 @@
 
 function csvToArray (str) {
     let arr1D = str.split(",");
-    const res = [[], []];
-    let k = 0;
-    for (let i = 0; i < arr1D.length; k++) {
-        for (let j = 0; j < 2; j++) {
-            res[j][k] = arr1D[i];
-            i++;
-        }
-    }
-    return res;
+    const arr2d = [];
+    const numCols = 2;
+    if (numCols) // safety first!
+        for (let i = 0; i < arr1D.length; i += numCols)
+            arr2d.push(arr1D.slice(i, i + numCols));
+    return arr2d;
 }
 
 console.log(csvToArray("3,4,5,sasdsa,23,24242,231232"));
