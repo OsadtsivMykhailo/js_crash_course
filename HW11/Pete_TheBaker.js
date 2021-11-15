@@ -24,16 +24,16 @@ function cakes(recipe, available) {
       res = 0;
     }
     for (let i = 0; i < recipeKeysValues.length; i++) {
-      for (let j = 0; j < availableKeysValues.length; j++) {
         if (availableKeys.indexOf(recipeKeysValues[i][0]) == -1) {
-          res = 0;
+            res = 0;
         }
-        if (recipeKeysValues[i][0] == availableKeysValues[j][0]) {
-          if (Math.floor(availableKeysValues[j][1] / recipeKeysValues[i][1]) < res) {
-            res = Math.floor(availableKeysValues[j][1] / recipeKeysValues[i][1]);
-          }
+        for (let j = 0; j < availableKeysValues.length; j++) {
+            if (recipeKeysValues[i][0] == availableKeysValues[j][0]) {
+                if (Math.floor(availableKeysValues[j][1] / recipeKeysValues[i][1]) < res) {
+                    res = Math.floor(availableKeysValues[j][1] / recipeKeysValues[i][1]);
+                }
+            }
         }
-      }
     }
     return res;
 }
