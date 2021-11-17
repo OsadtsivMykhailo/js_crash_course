@@ -70,3 +70,13 @@ console.log(sumIntervals ([[1,5]]));
 console.log(sumIntervals ([[1,5],[6,10]]));
 console.log(sumIntervals ([[1,5],[1,5]]));
 console.log(sumIntervals ([[1,4],[7, 10],[3, 5]]));
+
+// function sumIntervals(intervals) {
+//     const ranges = new Set();
+    
+//     intervals.forEach(([start, end]) => {
+//       for (let i = start; i < end; i++) ranges.add(i);
+//     });
+    
+//     return ranges.size;
+// }
