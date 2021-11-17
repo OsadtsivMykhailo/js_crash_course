@@ -40,18 +40,22 @@
 function cakes(obj1, obj2) {
     const result = {};
     let canIMake = true;
-    let max = 0;
-    Object.keys(obj1).forEach(ingredient => {
-        if (obj2[ingredient] === 0 || obj2[ingredient] === null || obj2[ingredient] === undefined) {
+    let max = Infinity;
+    for (let ingredient in obj1) {    
+        if (obj2[ingredient] === 0 || obj2[ingredient] === undefined || obj2[ingredient] === null) {
             result[ingredient] = 0;
             canIMake = false;
         } else if(obj2[ingredient]) {
-            result[ingredient] = parseInt(obj2[ingredient]/obj1[ingredient]);
+            const amount = parseInt(obj2[ingredient]/obj1[ingredient]);
+            result[ingredient] = amount;
+            if (max > amount) {
+                max = amount;
+            }
         }
-    });
-    if (canIMake) {
-        max = Math.min(...Object.values(result));
-    } else max = 0;
+    }
+    if (!canIMake) {
+        max = 0;
+    }
     return max;
 }
 
