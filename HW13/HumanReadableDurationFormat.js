@@ -40,7 +40,7 @@ function formatDuration (seconds) {
       return "now";
     }
      const resArr = [];
-      resArr[0] = Math.floor(seconds / 31556952);
+      resArr[0] = Math.floor(seconds / 31536000);
       seconds = seconds % 31556952;
       resArr[1] = Math.floor(seconds / 86400);
       seconds = seconds % 86400;
