@@ -4,13 +4,13 @@ export class Grade {
     getFirstSemester() {
         return this.#firstSemester;
     }
-    setFirstSemester(firstSemester) {
+    setFirstSemester(firstSemester = 0) {
         this.#firstSemester = firstSemester;
     }
     getSecondSemester() {
         return this.#secondSemester;
     }
-    setSecondSemester(secondSemester) {
+    setSecondSemester(secondSemester = 0) {
         this.#secondSemester = secondSemester;
     }
 }
